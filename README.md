@@ -14,7 +14,7 @@ No servers, no accounts for her, no cost. Only the Python standard library is us
    `https://<your-github-username>.github.io/job-listings/`
 6. **Send her the link.** On iPhone: open it in Safari → Share → **Add to Home Screen**. On Android: Chrome menu → **Add to Home screen**. It then opens like an app.
 
-From then on it runs every day at about 7 AM Pacific. Run it any time from the Actions tab.
+From then on it runs every day at 6 AM and 4 PM Pacific (GitHub may start a scheduled run up to ~15 minutes late). Run it any time from the Actions tab.
 
 ## Change what it looks for
 

@@ -1,8 +1,15 @@
 name: Daily job scout
 
+# Runs at 6 AM and 4 PM Pacific, all year.
+# GitHub schedules in UTC only, so each Pacific time is listed twice (daylight
+# and standard time). The "Check the time" step lets through only the run that
+# lands at 6 AM or 4 PM Pacific, and skips its twin.
 on:
   schedule:
-    - cron: "17 14 * * *"   # 14:17 UTC = 7:17 AM Pacific (6:17 AM in winter)
+    - cron: "7 13 * * *"   # 6 AM PDT
+    - cron: "7 14 * * *"   # 6 AM PST
+    - cron: "7 23 * * *"   # 4 PM PDT
+    - cron: "7 0 * * *"    # 4 PM PST
   workflow_dispatch:         # adds a "Run workflow" button in the Actions tab
     inputs:
       days:
@@ -12,23 +19,48 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: scout
+  cancel-in-progress: false
+
 jobs:
   scout:
     runs-on: ubuntu-latest
     steps:
+      - name: Check the time
+        id: when
+        run: |
+          hour=$(TZ=America/Los_Angeles date +%H)
+          echo "Pacific hour: $hour"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$hour" = "06" ] || [ "$hour" = "16" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Not 6 AM or 4 PM Pacific; skipping this duplicate slot."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.when.outputs.go == 'true'
 
       - uses: actions/setup-python@v5
+        if: steps.when.outputs.go == 'true'
         with:
           python-version: "3.12"
 
       - name: Run the scout
+        if: steps.when.outputs.go == 'true'
         run: python scout.py --days "${{ github.event.inputs.days || '3' }}"
 
       - name: Save results and update the page
+        if: steps.when.outputs.go == 'true'
         run: |
           git config user.name "job-scout-bot"
           git config user.email "job-scout-bot@users.noreply.github.com"
           git add jobs.json new_jobs.json new_jobs.csv docs/index.html
-          git diff --cached --quiet || git commit -m "Scout run $(date -u +%Y-%m-%d)"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Scout run $(TZ=America/Los_Angeles date '+%Y-%m-%d %H:%M %Z')"
+            git pull --rebase origin main
+            git push
+          fi
