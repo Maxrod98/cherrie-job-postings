@@ -1,0 +1,34 @@
+name: Daily job scout
+
+on:
+  schedule:
+    - cron: "17 14 * * *"   # 14:17 UTC = 7:17 AM Pacific (6:17 AM in winter)
+  workflow_dispatch:         # adds a "Run workflow" button in the Actions tab
+    inputs:
+      days:
+        description: "Posting window in days (use 7 or 14 for the first run)"
+        default: "3"
+
+permissions:
+  contents: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run the scout
+        run: python scout.py --days "${{ github.event.inputs.days || '3' }}"
+
+      - name: Save results and update the page
+        run: |
+          git config user.name "job-scout-bot"
+          git config user.email "job-scout-bot@users.noreply.github.com"
+          git add jobs.json new_jobs.json new_jobs.csv docs/index.html
+          git diff --cached --quiet || git commit -m "Scout run $(date -u +%Y-%m-%d)"
+          git push
