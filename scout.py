@@ -239,7 +239,7 @@ footer{margin-top:32px;color:var(--muted);font-size:13px}
 """
 
 
-def render_page(jobs: dict, path: Path, today: str):
+def render_page(jobs: dict, path: Path, today: str, keep_days: int = 3):
     esc = html.escape
     rows = sorted(jobs.values(), key=lambda d: (d["posted"], d["first_seen"]), reverse=True)
     parts = [
@@ -249,7 +249,7 @@ def render_page(jobs: dict, path: Path, today: str):
         "<title>Job Listings</title>",
         f"<style>{PAGE_CSS}</style></head><body><main>",
         "<h1>Job Listings</h1>",
-        f"<p class='sub'>{len(rows)} open roles at 500+ employee companies, newest first. "
+        f"<p class='sub'>{len(rows)} roles posted in the last {keep_days} days at 500+ employee companies, newest first. "
         f"Updated {esc(datetime.now().strftime('%b %d, %Y %I:%M %p'))}.</p>",
         "<nav>",
     ]
@@ -262,7 +262,7 @@ def render_page(jobs: dict, path: Path, today: str):
         group = [d for d in rows if d["region"] == r]
         parts.append(f"<h2 id='{r.lower().replace(' ', '-')}'>{esc(r)} <span>{len(group)}</span></h2>")
         if not group:
-            parts.append("<p class='empty'>No matching roles right now.</p>")
+            parts.append("<p class='empty'>No new roles here in the last few days.</p>")
             continue
         parts.append("<ul>")
         for d in group:
@@ -335,7 +335,7 @@ def main():
     ap.add_argument("--days", type=int, default=3, help="posting window in days (default 3)")
     ap.add_argument("--region", choices=list(REGIONS), help="only one region")
     ap.add_argument("--companies", default=str(HERE / "companies.json"))
-    ap.add_argument("--keep-days", type=int, default=30, help="how long a job stays on the page (default 30)")
+    ap.add_argument("--keep-days", type=int, default=3, help="show jobs posted up to this many days ago (default 3)")
     ap.add_argument("--verbose", action="store_true", help="print why each near-miss was skipped")
     args = ap.parse_args()
 
@@ -374,10 +374,10 @@ def main():
         w.writerows(out)
     # Remember every match, drop ones posted more than --keep-days ago, rebuild the page.
     store.update(new)
-    oldest = (datetime.now().date() - timedelta(days=args.keep_days)).isoformat()
+    oldest = (datetime.now(timezone.utc).date() - timedelta(days=args.keep_days)).isoformat()
     store = {k: v for k, v in store.items() if v["posted"] >= oldest}
     store_path.write_text(json.dumps(store, indent=1, sort_keys=True, ensure_ascii=False))
-    render_page(store, HERE / "docs" / "index.html", today)
+    render_page(store, HERE / "docs" / "index.html", today, args.keep_days)
 
     # Report.
     print(f"Read {total_jobs} open jobs from {len(companies) - len(failed)} companies.")

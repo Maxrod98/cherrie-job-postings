@@ -9,7 +9,7 @@ No servers, no accounts for her, no cost. Only the Python standard library is us
 1. **Create a repo** on GitHub, for example `job-listings`. Make it **public**: free GitHub Pages needs a public repo. The listings are public job posts anyway, and the page asks search engines not to index it.
 2. **Add these files** to the repo, keeping the folders: `scout.py`, `companies.json`, `README.md`, `.github/workflows/scout.yml`. Either `git push`, or on github.com use **Add file → Upload files** and drag the whole folder in.
 3. **Let the workflow save results:** Settings → Actions → General → Workflow permissions → **Read and write permissions** → Save.
-4. **First run:** Actions tab → **Daily job scout** → **Run workflow**, and set days to `14` so the first page has a full list. It takes about a minute.
+4. **First run:** Actions tab → **Daily job scout** → **Run workflow**, (leave days at `3`). It takes about a minute.
 5. **Turn on the page:** Settings → Pages → Source: **Deploy from a branch** → Branch `main`, folder **/docs** → Save. After a minute or two the page is live at
    `https://<your-github-username>.github.io/job-listings/`
 6. **Send her the link.** On iPhone: open it in Safari → Share → **Add to Home Screen**. On Android: Chrome menu → **Add to Home screen**. It then opens like an app.
@@ -20,7 +20,7 @@ From then on it runs every day at 6 AM and 4 PM Pacific (GitHub may start a sche
 
 - **Companies:** edit `companies.json`. Only add companies with 500+ employees. The run log (Actions tab → latest run → "Run the scout") lists companies it couldn't find; most of those use Workday or their own careers site, which this script doesn't read.
 - **Titles, cities, years:** edit `TRACKS`, `REGIONS`, `EXCLUDE_TITLE` near the top of `scout.py`.
-- **How long a job stays on the page:** `--keep-days` (default 30).
+- **How long a job stays on the page:** `--keep-days` (default 3, so only jobs posted in the last 3 days show).
 
 ## Run it on your own computer
 
