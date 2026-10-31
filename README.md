@@ -20,6 +20,7 @@ From then on it runs every day at 6 AM and 4 PM Pacific (GitHub may start a sche
 
 - **Companies:** edit `companies.json`. Only add companies with 500+ employees. The run log (Actions tab → latest run → "Run the scout") lists companies it couldn't find; most of those use Workday or their own careers site, which this script doesn't read.
 - **Titles, cities, years:** edit `TRACKS`, `REGIONS`, `EXCLUDE_TITLE` near the top of `scout.py`.
+- **Non-technical filter:** `TECHNICAL_TITLE` (words in a title that mean an engineering, data or hardware role) and `TECHNICAL_REQ` (phrases in a description that ask for coding or a technical background). Remove a word to let those roles back in.
 - **How long a job stays on the page:** `--keep-days` (default 3, so only jobs posted in the last 3 days show).
 
 ## Run it on your own computer

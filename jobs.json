@@ -1,21 +1,21 @@
 {
- "openai--commissioning-and-quality-program-manager--san-francisco": {
-  "company": "OpenAI",
-  "company_size": "500+",
-  "experience": "",
+ "addepar--product-manager-early-career-ai-platform--new-york": {
+  "company": "Addepar",
+  "company_size": "1,001–5,000 employees (Simplify company info)",
+  "experience": "0–2 years",
   "first_seen": "2026-10-31",
-  "found_by": "Local Scout",
-  "location": "San Francisco",
-  "notes": "",
+  "found_by": "Web Scout: New York",
+  "location": "New York, NY (in person)",
+  "notes": "Early-career PM role in wealth-tech; requires US work authorization without sponsorship, which a green card covers; employer ATS link not found, so the URL is the Simplify listing",
   "posted": "2026-10-29",
-  "posted_note": "from the employer's job feed",
-  "region": "Bay Area",
-  "salary": "$164K – $285K • Offers Equity",
+  "posted_note": "Simplify shows '2d' / 'Updated 2 days ago'; page metadata dated 10/29/2026",
+  "region": "New York",
+  "salary": "$83,000–$130,000 base + bonus + equity",
   "size_ok": "yes",
   "status": "new",
-  "title": "Commissioning and Quality Program Manager",
-  "track": "A",
-  "url": "https://jobs.ashbyhq.com/openai/2b4aa186-a90c-4e6c-a544-5f2cc8558525"
+  "title": "Product Manager – Early Career (AI Platform)",
+  "track": "B",
+  "url": "https://simplify.jobs/p/1aca142d-fcc8-4cfe-b6c6-d06c5b55c36f/Product-Manager--Early-Career-AI-Platform"
  },
  "openai--program-manager-local-community-impact--san-francisco": {
   "company": "OpenAI",
@@ -35,22 +35,22 @@
   "track": "A",
   "url": "https://jobs.ashbyhq.com/openai/6ebd3534-d65b-4d90-ba96-6a54de31409d"
  },
- "oscar-health--technical-program-manager-data--new-york": {
-  "company": "Oscar Health",
-  "company_size": "500+",
-  "experience": "2 years mentioned",
+ "ripple--operations-analyst--san-francisco": {
+  "company": "Ripple",
+  "company_size": "733 employees (Built In company profile)",
+  "experience": "Bachelor's + 2 yrs (policies/procedures; Jira, Power BI, Kantata, PS KPI reporting); Built In labels it Junior",
   "first_seen": "2026-10-31",
-  "found_by": "Local Scout",
-  "location": "New York, New York, United States",
-  "notes": "",
-  "posted": "2026-10-28",
-  "posted_note": "from the employer's job feed",
-  "region": "New York",
-  "salary": "",
+  "found_by": "Web Scout: Bay Area",
+  "location": "San Francisco, CA (listed In-Office; description says telecommuting permitted up to 100%)",
+  "notes": "Process/ops role: Jira dashboards, Power BI reports, project milestone reporting with DevOps/Finance; the very specific tool requirements look like a PERM-style posting, so it may be hard to win",
+  "posted": "2026-10-30",
+  "posted_note": "Built In SF shows 'Posted Yesterday' (seen 2026-10-31)",
+  "region": "Bay Area",
+  "salary": "$79,269-$79,469 base (CA)",
   "size_ok": "yes",
   "status": "new",
-  "title": "Technical Program Manager, Data",
-  "track": "A",
-  "url": "https://job-boards.greenhouse.io/oscar/jobs/8319419"
+  "title": "Operations Analyst",
+  "track": "D",
+  "url": "https://www.builtinsf.com/job/operations-analyst/11978582"
  }
 }

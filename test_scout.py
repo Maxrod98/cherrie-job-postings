@@ -27,6 +27,10 @@ GH = {"jobs": [
      "first_published": iso(1), "content": ""},
     {"title": "Product Operations Analyst", "location": {"name": "Austin, TX"}, "absolute_url": "https://example.com/gh6",
      "first_published": iso(1), "content": ""},
+    {"title": "Technical Program Manager", "location": {"name": "San Francisco, CA"}, "absolute_url": "https://example.com/gh7",
+     "first_published": iso(1), "content": ""},
+    {"title": "Product Manager, Payments", "location": {"name": "New York, NY"}, "absolute_url": "https://example.com/gh8",
+     "first_published": iso(1), "content": "You have a strong technical background and can write code."},
 ]}
 LEVER = [
     {"text": "Project Coordinator", "categories": {"location": "Irvine, CA", "allLocations": ["Irvine, CA"]},
@@ -35,7 +39,7 @@ LEVER = [
      "createdAt": ms(1), "descriptionPlain": "", "lists": [], "workplaceType": "remote"},
 ]
 ASHBY = {"jobs": [
-    {"title": "Product Analyst", "location": "Los Angeles, CA", "jobUrl": "https://example.com/ab1", "publishedAt": iso(0),
+    {"title": "Product Operations Associate", "location": "Los Angeles, CA", "jobUrl": "https://example.com/ab1", "publishedAt": iso(0),
      "descriptionPlain": "2 years of SQL experience", "isListed": True, "compensation": {"compensationTierSummary": "$90K – $110K"}},
 ]}
 
@@ -68,11 +72,11 @@ tmp = Path(tempfile.mkdtemp())
 
 first = run(tmp)
 titles = sorted(d["title"] for d in first)
-assert titles == ["Associate Product Manager", "Product Analyst", "Project Coordinator"], titles
+assert titles == ["Associate Product Manager", "Product Operations Associate", "Project Coordinator"], titles
 by = {d["title"]: d for d in first}
 assert by["Associate Product Manager"]["track"] == "B" and by["Associate Product Manager"]["region"] == "Bay Area"
 assert by["Project Coordinator"]["track"] == "D" and by["Project Coordinator"]["region"] == "Southern California"
-assert by["Product Analyst"]["track"] == "C" and by["Product Analyst"]["salary"] == "$90K – $110K"
+assert by["Product Operations Associate"]["track"] == "C" and by["Product Operations Associate"]["salary"] == "$90K – $110K"
 assert by["Associate Product Manager"]["doc_id"] == "gh-co--associate-product-manager--san-francisco"
 
 second = run(tmp)
@@ -93,12 +97,14 @@ web_doc = lambda **kw: {"company": "Web Co", "title": "Business Operations Assoc
     "web-co--business-operations-associate--new-york": web_doc(),
     "gh-co--associate-product-manager--san-francisco": web_doc(company="GH Co", url="https://example.com/dupe"),
     "tiny-co--product-analyst--new-york": web_doc(company="Tiny Co", size_ok="no"),
+    "big-co--technical-program-manager--new-york": web_doc(company="Big Co", title="Technical Program Manager"),
 }))
 run(tmp)
 store = json.loads((tmp / "jobs.json").read_text())
 assert "web-co--business-operations-associate--new-york" in store
 assert store["gh-co--associate-product-manager--san-francisco"]["url"] == "https://example.com/gh1", "feed version wins"
 assert "tiny-co--product-analyst--new-york" not in store
+assert "big-co--technical-program-manager--new-york" not in store, "technical web role filtered"
 assert len(store) == 4
 
 shutil.copy(tmp / "docs" / "index.html", HERE / "sample_page.html")

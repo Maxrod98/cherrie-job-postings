@@ -57,11 +57,35 @@ REGIONS = {
 
 # (track, pattern) — first match wins, so more specific patterns come first.
 TRACKS = [
-    ("C", r"product operations|product ops|business systems analyst|product analyst|implementation (specialist|consultant|manager|analyst)"),
+    ("C", r"product operations|product ops|implementation (specialist|consultant|manager|associate)"),
     ("B", r"associate product manager|\bapm\b|product manager|product owner"),
-    ("A", r"technical program manager|\btpm\b|program manager|project manager"),
+    ("A", r"program manager|project manager|program specialist|project specialist"),
     ("D", r"project coordinator|program coordinator|\bpmo\b|business operations|bizops|biz ops|strategy (and|&) operations|business analyst|operations analyst|rotational"),
 ]
+
+# She is not technical: drop roles whose title points at engineering, data or
+# hardware work, and feed roles whose description asks for coding skills or a
+# technical background. Edit these two lists to loosen or tighten the filter.
+TECHNICAL_TITLE = re.compile(
+    r"\b(technical|tpm|engineer\w*|developer|software|hardware|firmware|silicon|"
+    r"infrastructure|devops|security|network\w*|cloud|data|analytics|machine learning|ml|"
+    r"ai research|robotics|autonom\w*|machine vision|manufacturing|commissioning|"
+    r"lab|api\w*|sdk|systems|it)\b",
+    re.I,
+)
+TECHNICAL_REQ = re.compile(
+    r"technical background|engineering background|strong technical|deeply technical|"
+    r"technical degree|write code|writing code|coding (experience|skills)|programming (experience|skills)|"
+    r"proficien\w* (in|with) (python|java|sql|javascript)|experience (in|with) python|"
+    r"software (development|engineering) experience|experience as an? (software )?engineer|"
+    r"former (software )?engineer|hands-on technical",
+    re.I,
+)
+
+
+def is_technical(title: str, description: str = "") -> bool:
+    return bool(TECHNICAL_TITLE.search(title or "") or TECHNICAL_REQ.search(description or ""))
+
 
 EXCLUDE_TITLE = re.compile(
     r"\b(senior|sr\.?|staff|principal|lead|director|head of|vp|vice president|chief|"
@@ -213,7 +237,7 @@ def load_company(company):
 
 # ------------------------------------------------------------------- page ---
 
-TRACK_NAMES = {"A": "Program / TPM", "B": "Product", "C": "Product-adjacent", "D": "Business ops"}
+TRACK_NAMES = {"A": "Program / Project", "B": "Product", "C": "Product-adjacent", "D": "Business ops"}
 
 PAGE_CSS = """
 :root{--bg:#f6f7f5;--card:#fff;--fg:#1d2622;--muted:#5c6862;--line:#dfe3df;--accent:#1f6b52;--soft:#e3efe9;color-scheme:light}
@@ -295,6 +319,8 @@ def evaluate(company, job, cutoff, only_region):
     track = track_of(title)
     if not track:
         return None, "not a target title"
+    if is_technical(title, job.get("description", "")):
+        return None, "technical role"
     region = region_of(job["location"])
     if not region:
         return None, "not in a target region"
@@ -386,7 +412,8 @@ def main():
             print("web_jobs.json could not be read; skipping it.")
         for k, v in web.items():
             if (k not in store and k not in new and v.get("posted") and v.get("url")
-                    and v.get("region") in REGIONS and v.get("size_ok") == "yes"):
+                    and v.get("region") in REGIONS and v.get("size_ok") == "yes"
+                    and not is_technical(v.get("title", ""))):
                 store[k] = v
                 web_added += 1
     print(f"Web Scouts: {web_added} roles merged from web_jobs.json")
@@ -394,7 +421,7 @@ def main():
     # Remember every match, drop ones posted more than --keep-days ago, rebuild the page.
     store.update(new)
     oldest = (datetime.now(timezone.utc).date() - timedelta(days=args.keep_days)).isoformat()
-    store = {k: v for k, v in store.items() if v["posted"] >= oldest}
+    store = {k: v for k, v in store.items() if v["posted"] >= oldest and not is_technical(v["title"])}
     store_path.write_text(json.dumps(store, indent=1, sort_keys=True, ensure_ascii=False))
     render_page(store, HERE / "docs" / "index.html", today, args.keep_days)
 
