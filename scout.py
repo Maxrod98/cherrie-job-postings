@@ -14,6 +14,7 @@ Needs only Python 3.9+ (standard library). Run:
 Files it uses, all in this folder:
     companies.json   which companies to check (edit freely)
     jobs.json        every match so far, keyed by company--title--city (dedup)
+    web_jobs.json    roles found by the scheduled web-search Scouts (merged in)
     new_jobs.json    this run's new jobs, in the tracker's format
     new_jobs.csv     the same, for a spreadsheet
     docs/index.html  the phone-friendly listings page (served by GitHub Pages)
@@ -372,6 +373,24 @@ def main():
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         w.writeheader()
         w.writerows(out)
+    # Merge roles the web-search Scouts found (written to web_jobs.json by the
+    # scheduled Claude task). Same company--title--city keys, so no duplicates;
+    # a role found by both keeps the feed version, which has the exact date.
+    web_path = HERE / "web_jobs.json"
+    web_added = 0
+    if web_path.exists():
+        try:
+            web = json.loads(web_path.read_text())
+        except ValueError:
+            web = {}
+            print("web_jobs.json could not be read; skipping it.")
+        for k, v in web.items():
+            if (k not in store and k not in new and v.get("posted") and v.get("url")
+                    and v.get("region") in REGIONS and v.get("size_ok") == "yes"):
+                store[k] = v
+                web_added += 1
+    print(f"Web Scouts: {web_added} roles merged from web_jobs.json")
+
     # Remember every match, drop ones posted more than --keep-days ago, rebuild the page.
     store.update(new)
     oldest = (datetime.now(timezone.utc).date() - timedelta(days=args.keep_days)).isoformat()

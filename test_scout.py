@@ -84,5 +84,22 @@ page = (tmp / "docs" / "index.html").read_text()
 assert "Associate Product Manager" in page and "New today" in page and "<script" not in page
 assert "Senior Product Manager" not in page and "Software Engineer" not in page
 
+# Web-search Scout results get merged: valid one added, duplicate and small company ignored.
+today = now.date().isoformat()
+web_doc = lambda **kw: {"company": "Web Co", "title": "Business Operations Associate", "track": "D", "region": "New York",
+                        "location": "New York, NY", "url": "https://example.com/web1", "posted": today, "first_seen": today,
+                        "found_by": "Web Scout: New York", "status": "new", "size_ok": "yes", "salary": "", **kw}
+(tmp / "web_jobs.json").write_text(json.dumps({
+    "web-co--business-operations-associate--new-york": web_doc(),
+    "gh-co--associate-product-manager--san-francisco": web_doc(company="GH Co", url="https://example.com/dupe"),
+    "tiny-co--product-analyst--new-york": web_doc(company="Tiny Co", size_ok="no"),
+}))
+run(tmp)
+store = json.loads((tmp / "jobs.json").read_text())
+assert "web-co--business-operations-associate--new-york" in store
+assert store["gh-co--associate-product-manager--san-francisco"]["url"] == "https://example.com/gh1", "feed version wins"
+assert "tiny-co--product-analyst--new-york" not in store
+assert len(store) == 4
+
 shutil.copy(tmp / "docs" / "index.html", HERE / "sample_page.html")
 print("\nALL CHECKS PASSED")
