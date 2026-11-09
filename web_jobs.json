@@ -106,5 +106,23 @@
   "title": "Senior Associate, Project Manager",
   "track": "A",
   "url": "https://www.builtinnyc.com/job/senior-associate-project-manager/12038706"
+ },
+ "rokt--ai-operations-rokt-residency--new-york": {
+  "company": "Rokt",
+  "company_size": "700+ employees across eight offices (stated on the Rokt posting)",
+  "experience": "Entry level",
+  "first_seen": "2026-11-09",
+  "found_by": "Web Scout: New York",
+  "location": "New York, NY (in-office)",
+  "notes": "Entry-level business operations residency with no coding, SQL or technical degree required; paid four-month cohort (Jan 12-May 14, 2027) with a path to full-time.",
+  "posted": "2026-11-07",
+  "posted_note": "Built In NYC operations listing showed '2 Days Ago'; the job page itself said 'Posted Yesterday' (2026-11-08). Used the earlier date.",
+  "region": "New York",
+  "salary": "$40/hour during the residency; if converted to full-time, $85,000-$125,000 base ($90,000-$136,000 total with RSUs)",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "AI Operations - Rokt Residency",
+  "track": "D",
+  "url": "https://www.builtinnyc.com/job/ai-operations-rokt-residency/12130718"
  }
 }
