@@ -1,22 +1,4 @@
 {
- "federal-reserve-bank-of-san-francisco--business-analyst--san-francisco": {
-  "company": "Federal Reserve Bank of San Francisco",
-  "company_size": "1,001-5,000 employees (The Org)",
-  "experience": "Typically 2+ years in business analysis, program coordination, PM or operations (Junior)",
-  "first_seen": "2026-11-07",
-  "found_by": "Web Scout: Bay Area",
-  "location": "San Francisco, CA (in-office)",
-  "notes": "Coordination, project management and business-support role; asks for Microsoft 365 skills and some Tableau/Power BI dashboard work, but no SQL, coding or technical degree.",
-  "posted": "2026-11-06",
-  "posted_note": "Built In SF showed '20 Hours Ago' on the list page as of 2026-11-07; apply through the FRS Workday careers site (rb.wd5.myworkdayjobs.com/FRS)",
-  "region": "Bay Area",
-  "salary": "$82,600-$131,900 (San Francisco range)",
-  "size_ok": "yes",
-  "status": "new",
-  "title": "Business Analyst",
-  "track": "D",
-  "url": "https://www.builtinsf.com/job/business-analyst/12122465"
- },
  "jpmorganchase--americas-capital-markets-business-management-associate--new-york": {
   "company": "JPMorganChase",
   "company_size": "Large public company",
@@ -88,24 +70,6 @@
   "title": "Legal Program Manager",
   "track": "A",
   "url": "https://www.builtinsf.com/job/legal-program-manager/12114622"
- },
- "pfizer--senior-associate-project-manager--pearl-river": {
-  "company": "Pfizer",
-  "company_size": "Large public company",
-  "experience": "BA/BS + 2 years (or associate's + 4, or HS + 6); MBA/PMI preferred",
-  "first_seen": "2026-11-06",
-  "found_by": "Web Scout: New York",
-  "location": "Pearl River, NY (on-site; Pfizer Hudson Yards NYC and Madison NJ offices also listed)",
-  "notes": "Business project management (timelines, governance, stakeholder coordination, change management), no coding; requires permanent US work authorization, which her green card covers.",
-  "posted": "2026-11-06",
-  "posted_note": "Built In NYC job page said 'Posted 2 Hours Ago'; Built In list showed '3 Days Ago'. Either way within 2026-11-03 to 2026-11-06.",
-  "region": "New York",
-  "salary": "$82,700-$137,900 + 10% bonus target",
-  "size_ok": "yes",
-  "status": "new",
-  "title": "Senior Associate, Project Manager",
-  "track": "A",
-  "url": "https://www.builtinnyc.com/job/senior-associate-project-manager/12038706"
  },
  "rokt--ai-operations-rokt-residency--new-york": {
   "company": "Rokt",
