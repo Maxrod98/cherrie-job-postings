@@ -53,6 +53,24 @@
   "track": "D",
   "url": "https://www.builtinnyc.com/job/learning-operations-associate/11802245"
  },
+ "pfizer--manager-cx-adoption--new-york": {
+  "company": "Pfizer",
+  "company_size": "Large public company",
+  "experience": "2 yrs with a Master's (4 yrs with a Bachelor's) in product adoption, change management, internal comms or program coordination",
+  "first_seen": "2026-11-14",
+  "found_by": "Web Scout: New York",
+  "location": "New York, NY (Hudson Yards), Hybrid",
+  "notes": "Runs pilot and adoption programs, cohort engagement, colleague communications and change management, with no coding required. 'Building simple dashboards' is listed but light. The 2-year bar with a Master's is a stretch.",
+  "posted": "2026-11-14",
+  "posted_note": "Built In NYC job page showed 'Posted 7 Hours Ago' when checked on 2026-11-14; application deadline 2026-11-24",
+  "region": "New York",
+  "salary": "$99,200-$165,400 base + 12.5% bonus target",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "Manager, CX Adoption",
+  "track": "A",
+  "url": "https://www.builtinnyc.com/job/manager-cx-adoption/12189395"
+ },
  "spectrum-charter-communications--project-manager-customer-facing--cerritos": {
   "company": "Spectrum (Charter Communications)",
   "company_size": "Large public company",
@@ -70,23 +88,5 @@
   "title": "Project Manager, Customer Facing",
   "track": "A",
   "url": "https://www.builtinla.com/job/project-manager-customer-facing/12249629"
- },
- "tapestry-coach-and-kate-spade--assistant-manager-project-management-office--new-york": {
-  "company": "Tapestry (Coach and Kate Spade)",
-  "company_size": "Large public company",
-  "experience": "1-3 years of project management experience; bachelor's degree",
-  "first_seen": "2026-11-10",
-  "found_by": "Web Scout: New York",
-  "location": "New York, NY (Hudson Yards), Hybrid",
-  "notes": "Corporate PMO coordination role. The posting asks only for MS Office/Teams and some PM-tool exposure, with no coding or SQL, which suits her planning and stakeholder strengths.",
-  "posted": "2026-11-10",
-  "posted_note": "Built In NYC showed 'Posted 3 Hours Ago' on 2026-11-10",
-  "region": "New York",
-  "salary": "$67,000-$70,000",
-  "size_ok": "yes",
-  "status": "new",
-  "title": "Assistant Manager, Project Management Office",
-  "track": "D",
-  "url": "https://www.builtinnyc.com/job/assistant-manager-project-management-office/12169337"
  }
 }
