@@ -1,22 +1,4 @@
 {
- "motorola-solutions-silvus-technologies-subsidiary--junior-operations-coordinator--los-angeles": {
-  "company": "Motorola Solutions (Silvus Technologies subsidiary)",
-  "company_size": "Large public company",
-  "experience": "1+ years in an operations environment; Associate's degree or higher",
-  "first_seen": "2026-11-14",
-  "found_by": "Web Scout: Southern California",
-  "location": "West Los Angeles, CA (100% on-site)",
-  "notes": "Coordination role (order status updates to Sales Ops and customers, schedule tracking) with no coding or engineering degree; it supports production work orders, so it leans toward manufacturing operations",
-  "posted": "2026-11-13",
-  "posted_note": "Built In LA: 'Posted Yesterday' (seen 2026-11-14)",
-  "region": "Southern California",
-  "salary": "$25 - $30/hr",
-  "size_ok": "yes",
-  "status": "new",
-  "title": "Junior Operations Coordinator",
-  "track": "D",
-  "url": "https://www.builtinla.com/job/junior-operations-coordinator/12248054"
- },
  "northwell-health--associate-project-manager--westbury": {
   "company": "Northwell Health",
   "company_size": "About 68,500 employees (Revelio Labs, June 2026)",
@@ -53,22 +35,22 @@
   "track": "A",
   "url": "https://www.builtinnyc.com/job/manager-cx-adoption/12189395"
  },
- "spectrum-charter-communications--project-manager-customer-facing--cerritos": {
-  "company": "Spectrum (Charter Communications)",
-  "company_size": "Large public company",
-  "experience": "2+ years project management experience; Bachelor's or equivalent experience, plus a PM certification or a completed PM curriculum",
-  "first_seen": "2026-11-13",
-  "found_by": "Web Scout: Southern California",
-  "location": "Cerritos, CA (Los Angeles County), in-office with some travel",
-  "notes": "Non-technical customer-facing PM role (schedules, budgets, stakeholder consensus, customer status updates, MS Project); her program management certificate meets the stated requirement. No engineering or coding is required, but the 2-year experience bar is a stretch.",
-  "posted": "2026-11-13",
-  "posted_note": "Built In LA showed 'Posted 2 Hours Ago' on 2026-11-13; tagged Junior level",
-  "region": "Southern California",
-  "salary": "$75,200 - $157,200 base",
+ "via-via-transportation--product-support-operations-specialist--new-york": {
+  "company": "Via (Via Transportation)",
+  "company_size": "1,001-5,000 employees (Simplify company profile)",
+  "experience": "1-2 years incl. internships; recent grads welcome",
+  "first_seen": "2026-11-17",
+  "found_by": "Web Scout: New York",
+  "location": "New York, NY (in-person)",
+  "notes": "Product operations and customer support role with no SQL, coding or CS degree required. It values communication and coordination, though it does involve troubleshooting the platform (possibly Via's Remix planning product).",
+  "posted": "2026-11-14",
+  "posted_note": "Simplify posting page says 'Updated on Nov 14' and the Simplify NYC new-grad list showed '3 days ago'. No original posted date was shown, so check the date before applying.",
+  "region": "New York",
+  "salary": "$65,000-$75,000 base + equity",
   "size_ok": "yes",
   "status": "new",
-  "title": "Project Manager, Customer Facing",
-  "track": "A",
-  "url": "https://www.builtinla.com/job/project-manager-customer-facing/12249629"
+  "title": "Product Support & Operations Specialist",
+  "track": "C",
+  "url": "https://simplify.jobs/p/1525e8b9-9164-422c-b9e7-34948f7637c1/Product-Support--Operations-Specialist"
  }
 }
