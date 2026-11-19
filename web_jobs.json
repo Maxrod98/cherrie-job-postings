@@ -17,6 +17,42 @@
   "track": "A",
   "url": "https://www.builtinnyc.com/job/capital-stress-testing-program-manager-associate/11229023"
  },
+ "jpmorganchase--product-manager-investor-access-analyst--new-york": {
+  "company": "JPMorganChase",
+  "company_size": "Large public company",
+  "experience": "Analyst level; no minimum years stated",
+  "first_seen": "2026-11-19",
+  "found_by": "Web Scout: New York",
+  "location": "New York, NY (Hybrid)",
+  "notes": "Analyst-level product role on a client-facing investor platform. Requires gathering business requirements, cross-functional coordination and communication; SQL/Python is listed only as preferred.",
+  "posted": "2026-11-18",
+  "posted_note": "Built In NYC showed 'Yesterday' on 2026-11-19; the Evenbreak mirror's published-time metadata is 18 Nov 2026 (closes 18 Dec 2026)",
+  "region": "New York",
+  "salary": "$110,000-$125,000 base",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "Product Manager - Investor Access - Analyst",
+  "track": "B",
+  "url": "https://www.builtinnyc.com/job/product-manager-investor-access-analyst/12309244"
+ },
+ "morgan-stanley--onboarding-project-manager-avp--new-york": {
+  "company": "Morgan Stanley",
+  "company_size": "Large public company",
+  "experience": "2+ years in stock plan benefits and/or financial services",
+  "first_seen": "2026-11-19",
+  "found_by": "Web Scout: New York",
+  "location": "New York, NY (In-Office per Built In listing)",
+  "notes": "Client onboarding project management for Fortune 500 stock-plan clients. Needs MS Office/Project skills, and PMP (preferred) matches her certificate. Caveat: asks for 2+ years of financial-services domain experience.",
+  "posted": "2026-11-18",
+  "posted_note": "Built In NYC project-management list showed 'Yesterday' (Junior) on 2026-11-19; the employer page shows no date",
+  "region": "New York",
+  "salary": "$100,000-$140,000 base (New York)",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "Onboarding Project Manager, AVP",
+  "track": "A",
+  "url": "https://morganstanley.eightfold.ai/careers/job/549799346259"
+ },
  "northwell-health--associate-project-manager--westbury": {
   "company": "Northwell Health",
   "company_size": "About 68,500 employees (Revelio Labs, June 2026)",
@@ -34,5 +70,23 @@
   "title": "Associate Project Manager",
   "track": "A",
   "url": "https://www.builtinnyc.com/job/associate-project-manager/12272038"
+ },
+ "spectrum-charter-communications--project-manager-customer-facing--cerritos": {
+  "company": "Spectrum (Charter Communications)",
+  "company_size": "Large public company (Charter Communications; serves 70M+ homes and businesses in 45 states)",
+  "experience": "2+ years project management; Built In level: Junior",
+  "first_seen": "2026-11-19",
+  "found_by": "Web Scout: Southern California",
+  "location": "Cerritos, CA (In-Office; Built In LA lists it as Los Angeles, CA)",
+  "notes": "Customer-facing project coordination role. Asks for a PM certificate or coursework, which she has. Needs only Microsoft Project and general software skills, no coding or engineering. Note: 2+ years PM experience is required.",
+  "posted": "2026-11-19",
+  "posted_note": "Built In LA showed 'Posted An Hour Ago' / '3 Hours Ago' on 2026-11-19",
+  "region": "Southern California",
+  "salary": "$75,200 - $157,200 per year",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "Project Manager, Customer Facing",
+  "track": "A",
+  "url": "https://www.builtinla.com/job/project-manager-customer-facing/12346504"
  }
 }
