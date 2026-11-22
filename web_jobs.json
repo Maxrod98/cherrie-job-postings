@@ -35,6 +35,24 @@
   "track": "D",
   "url": "https://simplify.jobs/p/3af0fee2-622a-4a96-8011-157e2f8d1058/Junior-Financial-Operations-Analyst"
  },
+ "hinge-health--revenue-operations-associate--san-francisco": {
+  "company": "Hinge Health",
+  "company_size": "1001-5000 employees (Duke Capital Partners job board company profile); public company (IPO)",
+  "experience": "1+ year professional experience; 1+ year Excel",
+  "first_seen": "2026-11-22",
+  "found_by": "Web Scout: Bay Area",
+  "location": "San Francisco, CA (Hybrid, 3 days/week in office at 465 California St)",
+  "notes": "Junior business-ops role focused on cross-functional coordination, organization and internal project management; only Excel required, no SQL or coding",
+  "posted": "2026-11-19",
+  "posted_note": "Built In SF job page shows 'Posted 3 Days Ago' as of 2026-11-22",
+  "region": "Bay Area",
+  "salary": "$84K-$126K",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "Revenue Operations Associate",
+  "track": "D",
+  "url": "https://www.builtinsf.com/job/revenue-operations-associate/12335554"
+ },
  "spectrum-charter-communications--project-manager-customer-facing--cerritos": {
   "company": "Spectrum (Charter Communications)",
   "company_size": "Large public company (Charter Communications; serves 70M+ homes and businesses in 45 states)",
@@ -52,5 +70,23 @@
   "title": "Project Manager, Customer Facing",
   "track": "A",
   "url": "https://www.builtinla.com/job/project-manager-customer-facing/12346504"
+ },
+ "the-lundquist-institute-for-biomedical-innovation-at-harbor-ucla-medical-center--program-manager--torrance": {
+  "company": "The Lundquist Institute for Biomedical Innovation at Harbor-UCLA Medical Center",
+  "company_size": "Over 650 people (150+ investigators and 500 staff, per employer description on Built In)",
+  "experience": "Entry level per Built In; bachelor's in business/healthcare admin or related; master's preferred",
+  "first_seen": "2026-11-22",
+  "found_by": "Web Scout: Southern California",
+  "location": "Torrance, CA (in-office)",
+  "notes": "Non-technical program operations role: timelines, budgets, compliance, coordinating investigators, sponsors and vendors; research/healthcare setting",
+  "posted": "2026-11-21",
+  "posted_note": "Built In LA showed 'Yesterday' when fetched on 2026-11-22; no employer careers-site posting found",
+  "region": "Southern California",
+  "salary": "$90K-$115K",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "Program Manager",
+  "track": "A",
+  "url": "https://www.builtinla.com/job/program-manager/12391554"
  }
 }
