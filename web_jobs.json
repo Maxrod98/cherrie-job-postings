@@ -1,4 +1,22 @@
 {
+ "atlassian--revenue-onboarding-operations-specialist--san-francisco": {
+  "company": "Atlassian",
+  "company_size": "Large public company",
+  "experience": "Entry level (no years stated)",
+  "first_seen": "2026-11-24",
+  "found_by": "Web Scout: Bay Area",
+  "location": "San Francisco, CA (350 Bush St); remote-eligible, with on-site workshop weeks in SF 1-2x/month; Bay Area candidates preferred",
+  "notes": "Coordinates Atlassian's onboarding program for new sales hires (cohort planning, stakeholder and speaker coordination, communications, process improvement); tools are spreadsheets, Slack and Confluence, with no coding or SQL",
+  "posted": "2026-11-24",
+  "posted_note": "Built In SF showed '9 hours ago' on the listing page and 'Posted 4 hours ago' on the job page, both read 2026-11-24",
+  "region": "Bay Area",
+  "salary": "",
+  "size_ok": "yes",
+  "status": "new",
+  "title": "Revenue Onboarding Operations Specialist",
+  "track": "D",
+  "url": "https://www.builtinsf.com/job/revenue-onboarding-operations-specialist/12433397"
+ },
  "j-crew--associate-product-manager-web-experience--new-york": {
   "company": "J.Crew",
   "company_size": "10,001+ employees (Simplify company info)",
@@ -16,24 +34,6 @@
   "title": "Associate Product Manager - Web Experience",
   "track": "B",
   "url": "https://simplify.jobs/p/13a0515c-5e6f-4021-bed0-229b0e023185/Associate-Product-Manager-Web-Experience"
- },
- "openai--certification-operations-and-policy-program-manager--san-francisco": {
-  "company": "OpenAI",
-  "company_size": "~7,000+ employees (reports of headcount over 7,000 in early 2026)",
-  "experience": "No number of years stated; tagged 'Entry level' on Built In, but the posting prefers prior ownership of certification or licensure operations and policy",
-  "first_seen": "2026-11-23",
-  "found_by": "Web Scout: Bay Area",
-  "location": "San Francisco, CA (Hybrid per Built In)",
-  "notes": "Non-technical policy and operations program role: vendor coordination, playbooks, candidate communications, launch readiness. A stretch given the preferred domain experience.",
-  "posted": "2026-11-20",
-  "posted_note": "Built In SF listing (builtinsf.com/job/certification-operations-and-policy-program-manager/12362858) showed 'Posted 3 Days Ago' on 2026-11-23; the employer page shows no date",
-  "region": "Bay Area",
-  "salary": "$207K-$230K + equity",
-  "size_ok": "yes",
-  "status": "new",
-  "title": "Certification Operations and Policy Program Manager",
-  "track": "A",
-  "url": "https://openai.com/careers/certification-operations-and-policy-program-manager-san-francisco/"
  },
  "red-bull--specialist-digital-poster-operations--santa-monica": {
   "company": "Red Bull",
